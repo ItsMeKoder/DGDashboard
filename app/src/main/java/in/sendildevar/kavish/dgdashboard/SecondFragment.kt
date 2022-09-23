@@ -45,11 +45,11 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
                 requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId=R.id.PESButton
                 requireActivity().findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.FirstFragment)
         }
-        if(requireActivity().getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY",
-                AppCompatActivity.MODE_PRIVATE
-            ).getBoolean("darkMode",false)){
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }
+        // if(requireActivity().getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY",
+        //        AppCompatActivity.MODE_PRIVATE
+        //    ).getBoolean("darkMode",false)){
+        //    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        // }
         callback.isEnabled = true
     }
     override fun onCreateView(
