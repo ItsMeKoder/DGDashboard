@@ -44,6 +44,11 @@ class Settings : Fragment(R.layout.settingsfragment) {
                     .navigate(R.id.SecondFragment)
             }
         }
+        if(requireActivity().getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY",
+                AppCompatActivity.MODE_PRIVATE
+            ).getBoolean("darkMode",false)){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
         callback.isEnabled = true
     }
     override fun onCreateView(
