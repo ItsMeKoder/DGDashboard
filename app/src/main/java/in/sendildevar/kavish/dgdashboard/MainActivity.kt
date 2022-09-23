@@ -37,8 +37,6 @@ import `in`.sendildevar.kavish.dgdashboard.databinding.ActivityMainBinding
 
 @Suppress("NAME_SHADOWING")
 class MainActivity : AppCompatActivity() {
-    val sharedPref = getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY", Context.MODE_PRIVATE)
-
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -87,7 +85,7 @@ class MainActivity : AppCompatActivity() {
                     //Log.w(TAG, "signInWithEmail:failure", task.exception)
                 }
             }
-        if(sharedPref.getBoolean("darkMode",false)){
+        if(getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY", MODE_PRIVATE).getBoolean("darkMode",false)){
             setDefaultNightMode(MODE_NIGHT_YES)
         }
         WindowCompat.setDecorFitsSystemWindows(window, false)
