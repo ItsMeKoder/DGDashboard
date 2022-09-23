@@ -14,7 +14,7 @@ Dashboard for SARE Homes Phase 3 (SARE Crescent ParC) to view DG status and othe
 - Either use the apk from the [Releases](https://github.com/thinkingbits/DG-Dashboard/Releases).
 - Or, Download the app from [Google Play Store](https://play.google.com/store/apps/details?id=in.sendildevar.kavish.dgdashboard) (Available Soon!)
 
-## Images [here](https://github.com/thinkingbits/DGDashboard/tree/main/imgs)
+<!--- ## Images [here](https://github.com/thinkingbits/DGDashboard/tree/main/imgs) --->
 
 ## Building
 
