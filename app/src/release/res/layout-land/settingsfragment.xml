@@ -51,15 +51,6 @@
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
 
-        <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/darkSwitch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Dark Mode"
-            android:textSize="25sp"
-            android:visibility="invisible"
-            tools:ignore="HardcodedText" />
-
         <Space
             android:layout_width="wrap_content"
             android:layout_height="15dp" />
@@ -68,16 +59,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="236dp"
+        android:layout_width="633dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <Space
-            android:layout_width="253dp"
+            android:layout_width="326dp"
             android:layout_height="match_parent" />
 
         <Button
@@ -112,7 +103,6 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/exit"
-        style="@style/Widget.Material3.FloatingActionButton.Large.Surface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"

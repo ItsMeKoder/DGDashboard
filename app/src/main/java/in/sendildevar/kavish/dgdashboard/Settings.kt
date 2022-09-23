@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode
 import androidx.fragment.app.Fragment
@@ -44,13 +47,14 @@ class Settings : Fragment(R.layout.settingsfragment) {
                     .navigate(R.id.SecondFragment)
             }
         }
-        // if(requireActivity().getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY",
-              //  AppCompatActivity.MODE_PRIVATE
-            //).getBoolean("darkMode",false)){
-          //  AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-       // }else{
-         //   setDefaultNightMode(MODE_NIGHT_NO)
-        // }
+//        if(requireActivity().getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY",
+//                AppCompatActivity.MODE_PRIVATE
+//            ).getBoolean("darkMode",false)){
+//            setDefaultNightMode(MODE_NIGHT_YES)
+//
+//        }else{
+//            setDefaultNightMode(MODE_NIGHT_NO)
+//        }
         callback.isEnabled = true
     }
     override fun onCreateView(
@@ -80,20 +84,20 @@ class Settings : Fragment(R.layout.settingsfragment) {
         val notifications = sharedPref!!.getBoolean("notifications", defaultValue)
         val PES = sharedPref.getBoolean("PES", defaultValue)
         val Generator = sharedPref.getBoolean("Generator", defaultValue)
-        // var darkMode = sharedPref.getBoolean("darkMode", defaultValue)
+//        val darkMode = sharedPref.getBoolean("darkMode", defaultValue)
         val pesSwtich = requireView().findViewById<CheckBox>(R.id.pesnotificationswitch)
         val generatorSwitch= requireView().findViewById<CheckBox>(R.id.generatornotificationswitch)
         val notificationSwitch = view.findViewById<MaterialSwitch>(R.id.notificationSwitch)
-        // val darkmodeswitch = view.findViewById<MaterialSwitch>(R.id.darkSwitch)
+//        val darkmodeswitch = view.findViewById<MaterialSwitch>(R.id.darkSwitch)
         var saved=true
         notificationSwitch.isChecked = notifications
         pesSwtich?.isChecked = PES
         generatorSwitch?.isChecked=Generator
-        //darkmodeswitch?.isChecked=darkMode
-        //if (!notifications) {
-         //   pesSwtich.isEnabled = false
-           // generatorSwitch.isEnabled = false
-        // }
+//        darkmodeswitch?.isChecked=darkMode
+        if (!notifications) {
+            pesSwtich.isEnabled = false
+            generatorSwitch.isEnabled = false
+        }
         val discardButton=view.findViewById<MaterialButton>(R.id.discard)
         val saveButton=view.findViewById<MaterialButton>(R.id.save)
         notificationSwitch.setOnClickListener {
@@ -111,22 +115,21 @@ class Settings : Fragment(R.layout.settingsfragment) {
                 saved=false
             }
         }
-       // darkmodeswitch.setOnClickListener {
-        //    darkMode = sharedPref.getBoolean("darkMode", defaultValue)
-        //   if (darkMode != darkmodeswitch.isChecked) {
-          //      discardButton.isEnabled = true
-         //       saveButton.isEnabled = true
-          //      saved = false
-            //}
-            //else {
-        //        discardButton.isEnabled = false
-          //      saveButton.isEnabled = false
-              //  saved = false
-            //}
-            //if (darkmodeswitch.isChecked) {
-            //    setDefaultNightMode(MODE_NIGHT_YES)
-           // }
-       // }
+//        darkmodeswitch.setOnClickListener {
+//            darkMode = sharedPref.getBoolean("darkMode", defaultValue)
+//            discardButton.isEnabled = true
+//            saveButton.isEnabled = true
+//            saved = if (darkMode != darkmodeswitch.isChecked) {
+//                false
+//            } else {
+//                false
+//            }
+//            if (darkmodeswitch.isChecked) {
+//                setDefaultNightMode(MODE_NIGHT_YES)
+//            }else {
+//                setDefaultNightMode(MODE_NIGHT_NO)
+//            }
+//        }
         pesSwtich.setOnClickListener {discardButton.isEnabled=true;saveButton.isEnabled=true;if(pesSwtich.isChecked!=PES) {saved = false}}
         generatorSwitch.setOnClickListener {discardButton.isEnabled=true;saveButton.isEnabled=true;if(generatorSwitch.isChecked!=Generator) {saved = false}}
         val notSavedDialog = MaterialAlertDialogBuilder(requireActivity(), com.google.android.material.R.attr.materialAlertDialogTheme)
@@ -178,11 +181,11 @@ class Settings : Fragment(R.layout.settingsfragment) {
                 notSavedDialog.show()
             }
             else {
-                if (requireActivity().findViewById<BottomNavigationItemView>(R.id.GeneratorButton).isActivated) {
-                    findNavController().navigate(R.id.SecondFragment)
-                }
-                else if (requireActivity().findViewById<BottomNavigationItemView>(R.id.PESButton).isActivated) {
+                if (requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId==R.id.PESButton) {
                     findNavController().navigate(R.id.FirstFragment)
+                }
+                else if (requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId==R.id.GeneratorButton) {
+                    findNavController().navigate(R.id.SecondFragment)
                 }
             }
         }
@@ -191,7 +194,7 @@ class Settings : Fragment(R.layout.settingsfragment) {
             val Generator = sharedPref.getBoolean("Generator", defaultValue)
             pesSwtich?.isChecked = PES
             generatorSwitch?.isChecked=Generator
-            // darkmodeswitch?.isChecked=darkMode
+//            darkmodeswitch?.isChecked=darkMode
             it.isEnabled=false
             saveButton.isEnabled=false
         }
@@ -207,9 +210,9 @@ class Settings : Fragment(R.layout.settingsfragment) {
             }
 
 //            with (sharedPref.edit()) {
-  //              putBoolean("darkMode", darkmodeswitch.isChecked)
-    //            apply()
-      //      }
+//                putBoolean("darkMode", darkmodeswitch.isChecked)
+//                apply()
+//            }
 
             Firebase.messaging.subscribeToTopic("PES")
             with (sharedPref.edit()) {

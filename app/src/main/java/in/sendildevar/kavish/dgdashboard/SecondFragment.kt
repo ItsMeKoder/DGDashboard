@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -45,11 +47,13 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
                 requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId=R.id.PESButton
                 requireActivity().findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.FirstFragment)
         }
-        // if(requireActivity().getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY",
-        //        AppCompatActivity.MODE_PRIVATE
-        //    ).getBoolean("darkMode",false)){
-        //    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        // }
+//        if(requireActivity().getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY",
+//                AppCompatActivity.MODE_PRIVATE
+//            ).getBoolean("darkMode",false)){
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+//        }else{
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//        }
         callback.isEnabled = true
     }
     override fun onCreateView(

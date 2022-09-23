@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
@@ -36,11 +38,11 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
             if (!requireActivity().findViewById<BottomNavigationItemView>(R.id.PESButton).isActivated)
             requireActivity().findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.FirstFragment)
         }
-        //if(requireActivity().getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY",
-          //      AppCompatActivity.MODE_PRIVATE
-            //).getBoolean("darkMode",false)){
-            //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        //}
+//        if(requireActivity().getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY",
+//                AppCompatActivity.MODE_PRIVATE
+//            ).getBoolean("darkMode",false)){
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+//        }
         callback.isEnabled = true
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

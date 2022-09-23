@@ -85,9 +85,11 @@ class MainActivity : AppCompatActivity() {
                     //Log.w(TAG, "signInWithEmail:failure", task.exception)
                 }
             }
-        //if(getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY", MODE_PRIVATE).getBoolean("darkMode",false)){
-          //  setDefaultNightMode(MODE_NIGHT_YES)
-        //}
+//        if(getSharedPreferences("in.sendildevar.kavish.DGDashboard.PREFERENCE_FILE_KEY", MODE_PRIVATE).getBoolean("darkMode",false)){
+//            setDefaultNightMode(MODE_NIGHT_YES)
+//        }else{
+//            setDefaultNightMode(MODE_NIGHT_NO)
+//        }
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

@@ -77,7 +77,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Space
-            android:layout_width="253dp"
+            android:layout_width="327dp"
             android:layout_height="match_parent" />
 
         <Button
