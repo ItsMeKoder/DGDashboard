@@ -26,7 +26,7 @@ For security reasons the following have been remove from the source code :
 
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please request any secret if required.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please request for any secrets if required.
 
 Please make sure to update tests as appropriate.
 
