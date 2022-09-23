@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp"
+    android:paddingHorizontal="@dimen/activity_horizontal_margin"
+    android:paddingVertical="@dimen/activity_vertical_margin"
+    android:paddingBottom="50dp"
+    xml:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/notificationSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Notifications"
+            android:textSize="25sp"
+            tools:ignore="HardcodedText"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="43dp" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="15sp" />
+
+        <CheckBox
+            android:id="@+id/generatornotificationswitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Generator Changes"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <CheckBox
+            android:id="@+id/pesnotificationswitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PES Changes"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/darkSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dark Mode"
+            android:textSize="25sp"
+            tools:ignore="HardcodedText" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="236dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="123dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/discard"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Discard"
+            app:icon="@drawable/discard"
+            tools:ignore="HardcodedText"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="202dp" />
+
+        <Space
+            android:layout_width="20sp"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="122dp"
+            tools:layout_editor_absoluteY="202dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Save"
+            app:icon="@drawable/save"
+            tools:ignore="HardcodedText"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="202dp" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/exit"
+        style="@style/Widget.Material3.FloatingActionButton.Large.Surface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/exit"
+        android:tooltipText="Exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>
